@@ -15,6 +15,10 @@ Install dependencies:
 npm i
 ```
 
+Configure a scrapper profile:
+- rename `.env-example` to `.env`;
+- Populate the `.env` entries with css selectors that matches the blog template
+
 Run:
 ```sh
 npm run scrap <blog-url>
