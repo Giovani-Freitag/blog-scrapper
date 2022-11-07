@@ -54,13 +54,13 @@ export default class Scrapper{
 
         let $ = cheerio.load(html);
 
-        let posts = $('.blog-post .post-title a')
+        let posts = $(process.env.SELECTOR_POST_LINK)
             .map(function(){
                 return $(this).attr('href');
             })
             .get();
 
-        let nextLink = $('.blog-pager-older-link').attr('href');
+        let nextLink = $(process.env.SELECTOR_NEXT_PAGE_LINK).attr('href');
     
         return { posts, nextLink };
     }
@@ -82,17 +82,17 @@ export default class Scrapper{
 
         let $ = cheerio.load(html);
 
-        let title = $('.blog-post .post-title').text().trim();
+        let title = $(process.env.SELECTOR_POST_TITLE).text().trim();
 
-        let author = $('.blog-post .post-author').text();
+        let author = $(process.env.SELECTOR_POST_AUTHOR).text();
 
-        let tags = $('.post-labels .label-link')
+        let tags = $(process.env.SELECTOR_POST_TAGS)
             .map(function(){
                 return $(this).text();
             })
             .get();
 
-        let content = $('.post-body.post-content').prop('outerHTML');
+        let content = $(process.env.SELECTOR_POST_CONTENT).prop('outerHTML');
         
         return {title, author, tags, content};
     }
