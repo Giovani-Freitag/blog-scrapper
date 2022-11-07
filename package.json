@@ -15,5 +15,14 @@
     "cwait": "^1.1.2",
     "fs-extra": "^10.1.0",
     "node-fetch": "^3.2.10"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Giovani-Freitag/blog-scrapper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Giovani-Freitag/blog-scrapper/issues"
+  },
+  "homepage": "https://github.com/Giovani-Freitag/blog-scrapper#readme"
 }
