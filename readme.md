@@ -21,7 +21,7 @@ Configure a scrapper profile:
 
 Run:
 ```sh
-npm run scrap <blog-url>
+npm run scrap <blog-url> <?page-amount>
 ```
 
 A file named `output.json` will appears in the project root with all the scrapped content.

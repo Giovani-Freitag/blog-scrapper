@@ -5,5 +5,5 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 (new Scrapper(process.argv[2]))
-    .run()
+    .run(process.argv[3])
     .then(res => FS.writeJson(`./output.json`, res));

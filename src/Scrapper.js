@@ -16,20 +16,20 @@ export default class Scrapper{
         this.fetchPostQueue = queue.wrap(this.fetchPost.bind(this));
     }
 
-    async run(){
+    async run(pageAmount){
         
-        let links = await this.fetchPagination(this.entry);
+        let links = await this.fetchPagination(this.entry, pageAmount);
 
         return Promise.all(links.map((link, i) => this.fetchPostQueue(link, i)));
     }
 
-    async fetchPagination(link){
+    async fetchPagination(link, pageAmount = null){
 
         let finished = false;
         let page = 0;
         let stack = [];
 
-        while(!finished && page < 2){
+        while(!finished && (!pageAmount || page < pageAmount)){
             
             console.log(`Fetching: ${link}, Fetched posts: ${stack.length}`);
 
