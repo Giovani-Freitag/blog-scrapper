@@ -1,0 +1,19 @@
+{
+  "name": "blog-scrapper",
+  "version": "1.0.0",
+  "description": "Simple blog scrapper",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "scrap": "node index.js"
+  },
+  "keywords": [],
+  "author": "Giovani-Freitag",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "cwait": "^1.1.2",
+    "fs-extra": "^10.1.0",
+    "node-fetch": "^3.2.10"
+  }
+}
